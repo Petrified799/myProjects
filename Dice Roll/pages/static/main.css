@@ -1,0 +1,141 @@
+* {
+    background-color: rgb(255, 255, 255);
+}
+
+.dice_col {
+    border-right: 4px solid black;
+    position: relative;
+    min-height: 500px;
+}
+
+.dice {
+    position: relative;
+    padding: 4px;
+    background-color: rgb(236, 236, 236);
+    width: 104px;
+    height: 104px;
+    border-radius: 10%;
+    box-shadow: 5px 5px 15px rgb(223, 223, 223);
+}
+
+.dot {
+    display: block;
+    margin: 10px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgb(36, 36, 36);
+}
+
+.one-face {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .dice.one-face {
+    top: 0%;
+    left: 25%;
+} */
+
+.two-face {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* .dice.two-face {
+    top: 28%;
+    left: 15%;
+} */
+
+.two-face .dot:nth-of-type(2) {
+    align-self: end;
+}
+
+.three-face {
+    display: flex;
+    justify-content: space-around;
+}
+
+.three-face .dot:nth-of-type(2) {
+    align-self: center;
+}
+
+.three-face .dot:nth-of-type(3) {
+    align-self: flex-end;
+}
+
+.dice.three-face {
+    top: 50%;
+    left: 15%;
+}
+
+.four-face {
+    display: flex;
+    justify-content: space-between;
+}
+
+.four-face .column {
+    display: flex;
+    background-color: rgb(236, 236, 236);
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.dice.four-face {
+    top: 65%;
+    left: 25%;
+}
+
+.five-face {
+    display: flex;
+    justify-content: space-between;
+}
+
+.five-face .column {
+    display: flex;
+    background-color: rgb(236, 236, 236);
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.five-face .column:nth-last-of-type(2) {
+    display: flex;
+    justify-content: center;
+}
+
+.dice.five-face {
+    top: 50%;
+    left: 40%;
+}
+
+.six-face {
+    display: flex;
+    justify-content: space-between;
+}
+
+.six-face .column {
+    display: flex;
+    background-color: rgb(236, 236, 236);
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* .dice.six-face {
+    top: 25%;
+    left: 40%;
+} */
+
+@media (max-width: 500px) {
+    .dice {
+        width: 60px;
+        height: 60px;
+    }
+
+    .dot {
+        margin: 1px;
+        width: 6px;
+        height: 6px;
+        border-radius: 7px;
+    }
+}
