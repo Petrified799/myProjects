@@ -1,10 +1,33 @@
 * {
-    background-color: rgb(255, 255, 255);
+    margin: 0px;
+    padding: 0px
+}
+
+header {
+    display: flex;
+    background-color: rgb(233, 233, 233);
+    height: 60px;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+header>h3 {
+    position: relative;
+    top: 10px;
+}
+
+.row {
+    display: flex;
+}
+
+#dice_column {
+    border-right: 2px solid black;
 }
 
 .dice {
+    /* How to dice looks*/
     position: relative;
-    padding: 4px;
     background-color: rgb(236, 236, 236);
     width: 104px;
     height: 104px;
@@ -13,123 +36,105 @@
 }
 
 .dot {
+    /* How to dot looks*/
     display: block;
-    margin: 10px;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: rgb(36, 36, 36);
+    position: relative;
+    width: 14px;
+    height: 14px;
+    border-radius: 10px;
+    background-color: black;
+}
+
+#one_dice {
+    /* to adjust the position of the dice*/
+    display: flex;
+    justify-content: center;
 }
 
 .one-face {
+    /*to adjust the position of the dot*/
     display: flex;
+    position: relative;
     justify-content: center;
     align-items: center;
 }
 
-/* .dice.one-face {
-    top: 0%;
-    left: 25%;
-} */
-
 .two-face {
+    /* to adjust the position of the dot*/
     display: flex;
+    position: relative;
     justify-content: space-between;
+    padding: 14px;
 }
 
-/* .dice.two-face {
-    top: 28%;
-    left: 15%;
-} */
-
 .two-face .dot:nth-of-type(2) {
-    align-self: end;
+    /* to adjust the position of the last dot*/
+    align-self: flex-end;
+}
+
+/*this adjusts how the children should be placed*/
+.six-face {
+    display: flex;
+    /* the children will sit side-by-side horizontally in a row*/
+    justify-content: space-between;
+    /*this spaces the .column divs as far apart as possible within the .six-face container*/
+}
+
+/* this tells how each column should look*/
+.six-face>.column {
+    display: flex;
+    /*turing the .column into a flex container*/
+    /* So, this is each column, so I am specifying that which column direction to be vertical and put some space between each child element*/
+    flex-direction: column;
+    justify-content: space-between;
+    /* this will spread the dots from top to bottom evenly*/
+    padding: 14px;
 }
 
 .three-face {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 15px;
 }
 
 .three-face .dot:nth-of-type(2) {
+    display: flex;
+    position: relative;
+    justify-content: center;
     align-self: center;
 }
 
 .three-face .dot:nth-of-type(3) {
+    display: flex;
+    position: relative;
     align-self: flex-end;
-}
-
-.dice.three-face {
-    top: 50%;
-    left: 15%;
-}
-
-.four-face {
-    display: flex;
-    justify-content: space-between;
-}
-
-.four-face .column {
-    display: flex;
-    background-color: rgb(236, 236, 236);
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.dice.four-face {
-    top: 65%;
-    left: 25%;
 }
 
 .five-face {
     display: flex;
     justify-content: space-between;
+    padding: 14px;
 }
 
-.five-face .column {
+.five-face>.column {
     display: flex;
-    background-color: rgb(236, 236, 236);
     flex-direction: column;
     justify-content: space-between;
 }
 
-.five-face .column:nth-last-of-type(2) {
+.five-face .dot:nth-of-type(3) {
+    display: flex;
+
+    justify-content: center;
+    align-self: center;
+}
+
+#result_column {
+    background-color: black;
+}
+
+.result {
     display: flex;
     justify-content: center;
-}
-
-.dice.five-face {
-    top: 50%;
-    left: 40%;
-}
-
-.six-face {
-    display: flex;
-    justify-content: space-between;
-}
-
-.six-face .column {
-    display: flex;
-    background-color: rgb(236, 236, 236);
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-/* .dice.six-face {
-    top: 25%;
-    left: 40%;
-} */
-
-@media (max-width: 500px) {
-    .dice {
-        width: 60px;
-        height: 60px;
-    }
-
-    .dot {
-        margin: 1px;
-        width: 6px;
-        height: 6px;
-        border-radius: 7px;
-    }
+    color: red;
 }
