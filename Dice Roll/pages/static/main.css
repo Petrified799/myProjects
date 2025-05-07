@@ -1,6 +1,6 @@
 * {
     margin: 0px;
-    padding: 0px
+    padding: 0px;
 }
 
 header {
@@ -21,18 +21,14 @@ header>h3 {
     display: flex;
 }
 
-#dice_column {
-    border-right: 2px solid black;
-}
-
 .dice {
     /* How to dice looks*/
     position: relative;
     background-color: rgb(236, 236, 236);
     width: 104px;
     height: 104px;
-    border-radius: 10%;
-    box-shadow: 5px 5px 15px rgb(223, 223, 223);
+    border-radius: 20%;
+    box-shadow: 5px 5px 15px rgb(105, 105, 105);
 }
 
 .dot {
@@ -42,13 +38,15 @@ header>h3 {
     width: 14px;
     height: 14px;
     border-radius: 10px;
-    background-color: black;
+    background-color: rgb(50, 50, 50);
 }
 
-#one_dice {
+.dice_one {
     /* to adjust the position of the dice*/
     display: flex;
+    flex-direction: row;
     justify-content: center;
+    margin-top: 40px;
 }
 
 .one-face {
@@ -57,6 +55,12 @@ header>h3 {
     position: relative;
     justify-content: center;
     align-items: center;
+}
+
+.dice_two {
+    display: grid;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .two-face {
@@ -70,6 +74,12 @@ header>h3 {
 .two-face .dot:nth-of-type(2) {
     /* to adjust the position of the last dot*/
     align-self: flex-end;
+}
+
+.dice_six {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 /*this adjusts how the children should be placed*/
@@ -91,6 +101,12 @@ header>h3 {
     padding: 14px;
 }
 
+.dice_three {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 .three-face {
     display: flex;
     justify-content: space-between;
@@ -110,6 +126,12 @@ header>h3 {
     align-self: flex-end;
 }
 
+.dice_five {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 .five-face {
     display: flex;
     justify-content: space-between;
@@ -122,19 +144,64 @@ header>h3 {
     justify-content: space-between;
 }
 
-.five-face .dot:nth-of-type(3) {
+.five-face .column:nth-of-type(2) {
     display: flex;
-
     justify-content: center;
     align-self: center;
 }
 
+.dice_four {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#four_dice {
+    display: flex;
+    justify-content: center;
+}
+
+.four-face {
+    display: flex;
+    position: relative;
+    justify-content: space-evenly;
+}
+
+.four-face>.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+
 #result_column {
-    background-color: black;
+    background-color: rgb(0, 0, 0);
 }
 
 .result {
     display: flex;
     justify-content: center;
     color: red;
+}
+
+@media screen and (max-width: 560px) {
+    .dice {
+        /* How to dice looks*/
+        position: relative;
+        background-color: rgb(236, 236, 236);
+        width: 80px;
+        height: 80px;
+        border-radius: 20%;
+        box-shadow: 5px 5px 15px rgb(105, 105, 105);
+    }
+
+    .dot {
+        /* How to dot looks*/
+        display: block;
+        position: relative;
+        width: 10px;
+        height: 10px;
+        border-radius: 10px;
+        background-color: rgb(50, 50, 50);
+    }
 }
